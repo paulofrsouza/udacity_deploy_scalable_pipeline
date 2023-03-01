@@ -1,0 +1,594 @@
+MODEL SLICE PERFORMANCE REPORT
+
+Categorical column: workclass	| Slice value: Federal-gov
+precision = 0.7761194029850746
+recall = 0.7428571428571429
+fbeta = 0.759124087591241
+
+
+Categorical column: workclass	| Slice value: ?
+precision = 0.6666666666666666
+recall = 0.38095238095238093
+fbeta = 0.4848484848484849
+
+
+Categorical column: workclass	| Slice value: Self-emp-not-inc
+precision = 0.7115384615384616
+recall = 0.4713375796178344
+fbeta = 0.5670498084291188
+
+
+Categorical column: workclass	| Slice value: Self-emp-inc
+precision = 0.7747747747747747
+recall = 0.7288135593220338
+fbeta = 0.7510917030567685
+
+
+Categorical column: workclass	| Slice value: Local-gov
+precision = 0.7669902912621359
+recall = 0.7181818181818181
+fbeta = 0.7417840375586854
+
+
+Categorical column: workclass	| Slice value: Without-pay
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: workclass	| Slice value: State-gov
+precision = 0.7538461538461538
+recall = 0.6712328767123288
+fbeta = 0.7101449275362318
+
+
+Categorical column: workclass	| Slice value: Private
+precision = 0.7490952955367913
+recall = 0.6203796203796204
+fbeta = 0.6786885245901639
+
+
+Categorical column: education	| Slice value: Assoc-voc
+precision = 0.660377358490566
+recall = 0.5555555555555556
+fbeta = 0.6034482758620691
+
+
+Categorical column: education	| Slice value: Some-college
+precision = 0.7044334975369458
+recall = 0.516245487364621
+fbeta = 0.5958333333333333
+
+
+Categorical column: education	| Slice value: 10th
+precision = 0.4
+recall = 0.16666666666666666
+fbeta = 0.23529411764705882
+
+
+Categorical column: education	| Slice value: Prof-school
+precision = 0.8555555555555555
+recall = 0.9166666666666666
+fbeta = 0.8850574712643678
+
+
+Categorical column: education	| Slice value: Assoc-acdm
+precision = 0.7105263157894737
+recall = 0.574468085106383
+fbeta = 0.6352941176470589
+
+
+Categorical column: education	| Slice value: Bachelors
+precision = 0.75
+recall = 0.7066666666666667
+fbeta = 0.7276887871853548
+
+
+Categorical column: education	| Slice value: 7th-8th
+precision = 1.0
+recall = 0.16666666666666666
+fbeta = 0.2857142857142857
+
+
+Categorical column: education	| Slice value: Preschool
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: education	| Slice value: 5th-6th
+precision = 1.0
+recall = 0.5
+fbeta = 0.6666666666666666
+
+
+Categorical column: education	| Slice value: HS-grad
+precision = 0.6728971962616822
+recall = 0.41739130434782606
+fbeta = 0.5152057245080501
+
+
+Categorical column: education	| Slice value: 1st-4th
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: education	| Slice value: 12th
+precision = 1.0
+recall = 0.4
+fbeta = 0.5714285714285715
+
+
+Categorical column: education	| Slice value: 9th
+precision = 1.0
+recall = 0.3333333333333333
+fbeta = 0.5
+
+
+Categorical column: education	| Slice value: Masters
+precision = 0.8277511961722488
+recall = 0.8357487922705314
+fbeta = 0.8317307692307692
+
+
+Categorical column: education	| Slice value: Doctorate
+precision = 0.8448275862068966
+recall = 0.8596491228070176
+fbeta = 0.8521739130434783
+
+
+Categorical column: education	| Slice value: 11th
+precision = 1.0
+recall = 0.2727272727272727
+fbeta = 0.42857142857142855
+
+
+Categorical column: marital-status	| Slice value: Separated
+precision = 1.0
+recall = 0.3157894736842105
+fbeta = 0.4799999999999999
+
+
+Categorical column: marital-status	| Slice value: Never-married
+precision = 0.8444444444444444
+recall = 0.36893203883495146
+fbeta = 0.5135135135135135
+
+
+Categorical column: marital-status	| Slice value: Widowed
+precision = 1.0
+recall = 0.10526315789473684
+fbeta = 0.1904761904761905
+
+
+Categorical column: marital-status	| Slice value: Divorced
+precision = 0.8181818181818182
+recall = 0.34951456310679613
+fbeta = 0.48979591836734704
+
+
+Categorical column: marital-status	| Slice value: Married-AF-spouse
+precision = 1.0
+recall = 0.0
+fbeta = 0.0
+
+
+Categorical column: marital-status	| Slice value: Married-civ-spouse
+precision = 0.7419087136929461
+recall = 0.6793313069908815
+fbeta = 0.7092423641412138
+
+
+Categorical column: marital-status	| Slice value: Married-spouse-absent
+precision = 1.0
+recall = 0.125
+fbeta = 0.2222222222222222
+
+
+Categorical column: occupation	| Slice value: Other-service
+precision = 1.0
+recall = 0.19230769230769232
+fbeta = 0.32258064516129037
+
+
+Categorical column: occupation	| Slice value: Farming-fishing
+precision = 0.5
+recall = 0.14285714285714285
+fbeta = 0.22222222222222224
+
+
+Categorical column: occupation	| Slice value: Prof-specialty
+precision = 0.7887700534759359
+recall = 0.7525510204081632
+fbeta = 0.7702349869451697
+
+
+Categorical column: occupation	| Slice value: Adm-clerical
+precision = 0.625
+recall = 0.46875
+fbeta = 0.5357142857142857
+
+
+Categorical column: occupation	| Slice value: Handlers-cleaners
+precision = 0.6666666666666666
+recall = 0.3333333333333333
+fbeta = 0.4444444444444444
+
+
+Categorical column: occupation	| Slice value: Transport-moving
+precision = 0.5869565217391305
+recall = 0.421875
+fbeta = 0.49090909090909096
+
+
+Categorical column: occupation	| Slice value: ?
+precision = 0.6666666666666666
+recall = 0.38095238095238093
+fbeta = 0.4848484848484849
+
+
+Categorical column: occupation	| Slice value: Tech-support
+precision = 0.7083333333333334
+recall = 0.6666666666666666
+fbeta = 0.6868686868686869
+
+
+Categorical column: occupation	| Slice value: Machine-op-inspct
+precision = 0.6071428571428571
+recall = 0.3617021276595745
+fbeta = 0.4533333333333333
+
+
+Categorical column: occupation	| Slice value: Exec-managerial
+precision = 0.7994579945799458
+recall = 0.743073047858942
+fbeta = 0.7702349869451697
+
+
+Categorical column: occupation	| Slice value: Craft-repair
+precision = 0.6991869918699187
+recall = 0.47513812154696133
+fbeta = 0.5657894736842105
+
+
+Categorical column: occupation	| Slice value: Priv-house-serv
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: occupation	| Slice value: Sales
+precision = 0.7455621301775148
+recall = 0.65625
+fbeta = 0.6980609418282548
+
+
+Categorical column: occupation	| Slice value: Armed-Forces
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: occupation	| Slice value: Protective-serv
+precision = 0.7333333333333333
+recall = 0.5238095238095238
+fbeta = 0.611111111111111
+
+
+Categorical column: relationship	| Slice value: Unmarried
+precision = 1.0
+recall = 0.26666666666666666
+fbeta = 0.4210526315789474
+
+
+Categorical column: relationship	| Slice value: Husband
+precision = 0.7467289719626168
+recall = 0.6829059829059829
+fbeta = 0.713392857142857
+
+
+Categorical column: relationship	| Slice value: Wife
+precision = 0.7014925373134329
+recall = 0.6573426573426573
+fbeta = 0.6787003610108303
+
+
+Categorical column: relationship	| Slice value: Not-in-family
+precision = 0.8170731707317073
+recall = 0.35638297872340424
+fbeta = 0.4962962962962963
+
+
+Categorical column: relationship	| Slice value: Own-child
+precision = 1.0
+recall = 0.17647058823529413
+fbeta = 0.3
+
+
+Categorical column: relationship	| Slice value: Other-relative
+precision = 1.0
+recall = 0.25
+fbeta = 0.4
+
+
+Categorical column: race	| Slice value: Other
+precision = 1.0
+recall = 0.6666666666666666
+fbeta = 0.8
+
+
+Categorical column: race	| Slice value: Asian-Pac-Islander
+precision = 0.8035714285714286
+recall = 0.7258064516129032
+fbeta = 0.7627118644067797
+
+
+Categorical column: race	| Slice value: Amer-Indian-Eskimo
+precision = 0.7142857142857143
+recall = 0.5
+fbeta = 0.588235294117647
+
+
+Categorical column: race	| Slice value: Black
+precision = 0.723404255319149
+recall = 0.5230769230769231
+fbeta = 0.6071428571428572
+
+
+Categorical column: race	| Slice value: White
+precision = 0.7476871320437343
+recall = 0.6225490196078431
+fbeta = 0.6794038975926634
+
+
+Categorical column: sex	| Slice value: Male
+precision = 0.7541412380122058
+recall = 0.6464872944693573
+fbeta = 0.6961770623742455
+
+
+Categorical column: sex	| Slice value: Female
+precision = 0.717948717948718
+recall = 0.48068669527896996
+fbeta = 0.5758354755784062
+
+
+Categorical column: native-country	| Slice value: Jamaica
+precision = 0.0
+recall = 1.0
+fbeta = 0.0
+
+
+Categorical column: native-country	| Slice value: El-Salvador
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Puerto-Rico
+precision = 0.8333333333333334
+recall = 0.8333333333333334
+fbeta = 0.8333333333333334
+
+
+Categorical column: native-country	| Slice value: Italy
+precision = 0.75
+recall = 0.75
+fbeta = 0.75
+
+
+Categorical column: native-country	| Slice value: Cuba
+precision = 0.6666666666666666
+recall = 0.8
+fbeta = 0.7272727272727272
+
+
+Categorical column: native-country	| Slice value: Columbia
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Thailand
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Canada
+precision = 0.8
+recall = 0.5
+fbeta = 0.6153846153846154
+
+
+Categorical column: native-country	| Slice value: Peru
+precision = 0.5
+recall = 1.0
+fbeta = 0.6666666666666666
+
+
+Categorical column: native-country	| Slice value: Germany
+precision = 0.7692307692307693
+recall = 0.7692307692307693
+fbeta = 0.7692307692307693
+
+
+Categorical column: native-country	| Slice value: Laos
+precision = 1.0
+recall = 0.0
+fbeta = 0.0
+
+
+Categorical column: native-country	| Slice value: Yugoslavia
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Portugal
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Poland
+precision = 0.6666666666666666
+recall = 1.0
+fbeta = 0.8
+
+
+Categorical column: native-country	| Slice value: Haiti
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: South
+precision = 0.5
+recall = 0.5
+fbeta = 0.5
+
+
+Categorical column: native-country	| Slice value: Greece
+precision = 0.0
+recall = 0.0
+fbeta = 0.0
+
+
+Categorical column: native-country	| Slice value: Ecuador
+precision = 1.0
+recall = 0.5
+fbeta = 0.6666666666666666
+
+
+Categorical column: native-country	| Slice value: Vietnam
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Nicaragua
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Trinadad&Tobago
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Guatemala
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Hong
+precision = 0.5
+recall = 1.0
+fbeta = 0.6666666666666666
+
+
+Categorical column: native-country	| Slice value: Honduras
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Scotland
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: India
+precision = 0.7777777777777778
+recall = 0.875
+fbeta = 0.823529411764706
+
+
+Categorical column: native-country	| Slice value: ?
+precision = 0.76
+recall = 0.6129032258064516
+fbeta = 0.6785714285714285
+
+
+Categorical column: native-country	| Slice value: Iran
+precision = 0.3333333333333333
+recall = 0.2
+fbeta = 0.25
+
+
+Categorical column: native-country	| Slice value: Hungary
+precision = 1.0
+recall = 0.5
+fbeta = 0.6666666666666666
+
+
+Categorical column: native-country	| Slice value: United-States
+precision = 0.7472527472527473
+recall = 0.61602787456446
+fbeta = 0.6753246753246754
+
+
+Categorical column: native-country	| Slice value: Cambodia
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Ireland
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: France
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Mexico
+precision = 1.0
+recall = 0.3333333333333333
+fbeta = 0.5
+
+
+Categorical column: native-country	| Slice value: Philippines
+precision = 1.0
+recall = 0.75
+fbeta = 0.8571428571428571
+
+
+Categorical column: native-country	| Slice value: China
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: England
+precision = 0.6666666666666666
+recall = 0.5
+fbeta = 0.5714285714285715
+
+
+Categorical column: native-country	| Slice value: Dominican-Republic
+precision = 1.0
+recall = 1.0
+fbeta = 1.0
+
+
+Categorical column: native-country	| Slice value: Taiwan
+precision = 0.75
+recall = 0.75
+fbeta = 0.75
+
+
+Categorical column: native-country	| Slice value: Japan
+precision = 0.75
+recall = 0.75
+fbeta = 0.75
