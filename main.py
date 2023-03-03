@@ -6,24 +6,26 @@ Date: Feb. 2023
 '''
 
 
-from typing import Union, Optional
-import os 
 import pickle
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI
+from pydantic.main import BaseModel
 
 import pandas as pd
 from ml.data import process_data
 
 app = FastAPI(
-    title = "Census API",
-    description = "An API for serving predictions over the US census dataset.",
-    version = "0.0.1")
+    title="Census API",
+    description="An API for serving predictions over the US census dataset.",
+    version="0.0.1")
 
-class data_input(BaseModel):
+
+class DataInput(BaseModel):
+    '''
+    Input data class for feeding into the API.
+    '''
     age: int
-    workclass: str 
+    workclass: str
     fnlgt: int
     education: str
     education_num: int
@@ -38,51 +40,68 @@ class data_input(BaseModel):
     native_country: str
 
     class Config:
+        '''
+        DataInput example schema class
+        '''
         schema_extra = {
             "example": {
-                'age':50,
-                'workclass':"Private", 
-                'fnlgt':234721,
-                'education':"Doctorate",
-                'education_num':16,
-                'marital_status':"Separated",
-                'occupation':"Exec-managerial",
-                'relationship':"Not-in-family",
-                'race':"Black",
-                'sex':"Female",
-                'capital_gain':0,
-                'capital_loss':0,
-                'hours_per_week':50,
-                'native_country':"United-States"
+                'age': 39,
+                'workclass': "State-gov",
+                'fnlgt': 77516,
+                'education': "Bachelors",
+                'education_num': 13,
+                'marital_status': "Never-married",
+                'occupation': "Adm-clerical",
+                'relationship': "Not-in-family",
+                'race': "White",
+                'sex': "Male",
+                'capital_gain': 2174,
+                'capital_loss': 0,
+                'hours_per_week': 40,
+                'native_country': "United-States"
             }
         }
 
-        
+
+RF_MODEL, DATA_ENCODER, LIN_BINARIZER = None, None, None
+
+
 @app.on_event("startup")
-async def startup_event(): 
-    global model, encoder, lb
+async def startup_event():
+    '''
+    Function to load global objects, speeding up startup process.
+    '''
+    global RF_MODEL, DATA_ENCODER, LIN_BINARIZER
     try:
-        with open('./model/rf_model.pkl', 'rb') as f:
-            model = pickle.load(f)
-        with open('./model/encoder.pkl', 'rb') as f:
-            encoder = pickle.load(f)
-        with open('./model/lb.pkl', 'rb') as f:
-            lb = pickle.load(f)
+        with open('./model/rf_model.pkl', 'rb') as file:
+            RF_MODEL = pickle.load(file)
+        with open('./model/encoder.pkl', 'rb') as file:
+            DATA_ENCODER = pickle.load(file)
+        with open('./model/lb.pkl', 'rb') as file:
+            LIN_BINARIZER = pickle.load(file)
     except Exception as err:
-        print('Some or all of the model prediction objects could not be loaded.')
+        print(
+            'Some or all of the model prediction objects could not be loaded.'
+        )
         raise err
 
-    
+
 @app.get("/")
 async def welcome():
+    '''
+    Displays welcome message on API's root page.
+    '''
     return "Welcome to the FastAPI model app"
 
 
 @app.post("/inference/")
-async def ingest_data(inference: data_input):
-    data = {  
+async def ingest_data(inference: DataInput):
+    '''
+    API's main function. Performs inference over the passed data.
+    '''
+    data = {
         'age': inference.age,
-        'workclass': inference.workclass, 
+        'workclass': inference.workclass,
         'fnlgt': inference.fnlgt,
         'education': inference.education,
         'education-num': inference.education_num,
@@ -110,26 +129,15 @@ async def ingest_data(inference: data_input):
         "native-country",
     ]
 
-    try:
-        with open('./model/rf_model.pkl', 'rb') as f:
-            model = pickle.load(f)
-        with open('./model/encoder.pkl', 'rb') as f:
-            encoder = pickle.load(f)
-        with open('./model/lb.pkl', 'rb') as f:
-            lb = pickle.load(f)
-    except Exception as err:
-        print('Some or all of the model prediction objects could not be loaded.')
-        raise err
-        
-    treated_obs,_,_,_ = process_data(
-        obs, 
-        categorical_features=cat_features, 
-        training=False, 
-        encoder=encoder, 
-        lb=lb
+    treated_obs, _, _, _ = process_data(
+        obs,
+        categorical_features=cat_features,
+        training=False,
+        encoder=DATA_ENCODER,
+        lb=LIN_BINARIZER
     )
 
-    pred = model.predict(treated_obs)
+    pred = RF_MODEL.predict(treated_obs)
     pred = '<=50k' if pred[0] < .5 else '>50k'
     data['prediction'] = pred
 

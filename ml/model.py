@@ -3,6 +3,7 @@ from sklearn.ensemble import RandomForestClassifier
 from ml.data import process_data
 from textwrap import dedent
 
+
 def train_model(x_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -20,13 +21,13 @@ def train_model(x_train, y_train):
     """
 
     rf = RandomForestClassifier(
-        n_estimators = 100,
-        bootstrap = True,
-        oob_score = True,
-        n_jobs = -1,
-        random_state = 42,
-        class_weight = 'balanced',
-        max_samples = 0.8
+        n_estimators=100,
+        bootstrap=True,
+        oob_score=True,
+        n_jobs=-1,
+        random_state=42,
+        class_weight='balanced',
+        max_samples=0.8
     )
     rf.fit(x_train, y_train)
 
@@ -35,7 +36,8 @@ def train_model(x_train, y_train):
 
 def compute_model_metrics(y, preds, display=False):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model using precision, recall, and
+    F1.
 
     Inputs
     ------
@@ -52,7 +54,7 @@ def compute_model_metrics(y, preds, display=False):
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
-    
+
     if display:
         print(f'f-beta: {fbeta}')
         print(f'precision: {precision}')
@@ -63,7 +65,7 @@ def compute_model_metrics(y, preds, display=False):
 
 
 def inference(model, x):
-    """ 
+    """
     Run model inferences and return the predictions.
 
     Inputs
@@ -77,7 +79,7 @@ def inference(model, x):
     preds : np.array
         Predictions from the model.
     """
-    
+
     preds = model.predict(x)
 
     return preds
@@ -88,7 +90,7 @@ def calc_slice_performance(
 ) -> str:
     '''
     Calculates the trained model performance over slices in categorical data.
-    
+
     Inputs
     ------
         data: pandas.DataFrame
@@ -102,33 +104,33 @@ def calc_slice_performance(
         lb : sklearn.preprocessing._label.LabelBinarizer
             Trained LabelBinarizer.
     '''
-    
+
     slice_perf = 'MODEL SLICE PERFORMANCE REPORT'
-    
+
     for col in cat_features:
         fixed_vals = set(data[col])
         for val in fixed_vals:
             cut = data.loc[data[col] == val, :]
             x_slice, y_slice, _, _ = process_data(
                 cut,
-                categorical_features = cat_features,
-                label = 'salary',
-                training = False,
-                encoder = encoder,
-                lb = lb
+                categorical_features=cat_features,
+                label='salary',
+                training=False,
+                encoder=encoder,
+                lb=lb
             )
             preds_slice = inference(model, x_slice)
-            slice_perf += f'\n\nCategorical column: {col}\t| Slice value: {val}'
+            slice_perf += f'\n\nCategorical column:{col}\t| Slice value:{val}'
             precision, recall, fbeta = compute_model_metrics(
                 y_slice, preds_slice, display=False
             )
             slice_perf += dedent(
                 f'''\
-                
+
                 precision = {precision}
                 recall = {recall}
                 fbeta = {fbeta}
                 '''
             )
-            
+
     return slice_perf
