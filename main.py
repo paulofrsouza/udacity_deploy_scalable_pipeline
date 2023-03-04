@@ -63,9 +63,6 @@ class DataInput(BaseModel):
         }
 
 
-RF_MODEL, DATA_ENCODER, LIN_BINARIZER = None, None, None
-
-
 @app.on_event("startup")
 async def startup_event():
     '''
@@ -95,10 +92,23 @@ async def welcome():
 
 
 @app.post("/inference/")
-async def ingest_data(inference: DataInput):
+async def inference(inference: DataInput):
     '''
     API's main function. Performs inference over the passed data.
     '''
+    try:
+        with open('./model/rf_model.pkl', 'rb') as file:
+            RF_MODEL = pickle.load(file)
+        with open('./model/encoder.pkl', 'rb') as file:
+            DATA_ENCODER = pickle.load(file)
+        with open('./model/lb.pkl', 'rb') as file:
+            LIN_BINARIZER = pickle.load(file)
+    except Exception as err:
+        print(
+            'Some or all of the model prediction objects could not be loaded.'
+        )
+        raise err
+
     data = {
         'age': inference.age,
         'workclass': inference.workclass,
