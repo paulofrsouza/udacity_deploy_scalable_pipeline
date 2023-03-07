@@ -100,19 +100,19 @@ def test_inference_sample():
 
     # observation on position 12116 in clean_census.csv dataset
     obs = {
-        'age': 43,
-        'workclass': "Private",
-        'fnlgt': 484861,
-        'education': "Some-college",
-        'education_num': 10,
+        'age': 52,
+        'workclass': "Self-emp-not-inc",
+        'fnlgt': 209642,
+        'education': "HS-grad",
+        'education_num': 9,
         'marital_status': "Married-civ-spouse",
-        'occupation': "Craft-repair",
+        'occupation': "Exec-managerial",
         'relationship': "Husband",
         'race': "White",
         'sex': "Male",
-        'capital_gain': 4064,
+        'capital_gain': 0,
         'capital_loss': 0,
-        'hours_per_week': 38,
+        'hours_per_week': 45,
         'native_country': "United-States"
     }
     obs = json.dumps(obs)
@@ -120,8 +120,8 @@ def test_inference_sample():
 
     try:
         assert resp.status_code == 200
-        assert resp.json()["education-num"] == 10
-        assert resp.json()["occupation"] == 'Craft-repair'
+        assert resp.json()["education-num"] == 9
+        assert resp.json()["occupation"] == 'Exec-managerial'
     except AssertionError as err:
         logging.error(
             ' - test_inference_sample: the data point was not correctly \
@@ -134,7 +134,7 @@ def test_inference_sample():
     )
 
     try:
-        assert resp.json()["prediction"] == '<=50k'
+        assert resp.json()["prediction"] == '>50k'
     except AssertionError as err:
         logging.info(
             ' - test_inference_sample: the returned prediction was incorrect.'

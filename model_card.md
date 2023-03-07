@@ -21,13 +21,17 @@
 
 ## Evaluation Data
 
-Same as above
+The evaluation data was obtained with a 20% random sample, without replacement, of the entire dataset.
 
 ## Metrics
 
 - f-beta: 0.686
 - precision: 0.756
 - recall: 0.628
+
+## Caveats and Recommendations
+
+The dataset used is based on a slice of census data from the american populaion. It's recommended to use the model onl for the purpose it was designed for, given its predictions may have sensitive impacts on given populational groups. Moreover, its important to use the model in the API context it was designed for.
 
 ## Ethical Considerations
 
